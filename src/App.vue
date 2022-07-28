@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-view></main-view>
+    <router-view></router-view>
     <footer-component></footer-component>
   </div>
 </template>
