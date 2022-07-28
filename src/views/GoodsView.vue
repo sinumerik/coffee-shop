@@ -67,6 +67,48 @@ export default {
     NavbarComponent,
     CardComponent,
   },
+  data() {
+    return {
+      cards: [
+        {
+          id: 0,
+          img: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73
+        },
+        {
+          id: 0,
+          img: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73
+        },
+        {
+          id: 0,
+          img: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73
+        },
+        {
+          id: 0,
+          img: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73
+        },
+        {
+          id: 0,
+          img: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73
+        },
+        {
+          id: 0,
+          img: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73
+        },
+      ]
+    }
+  }
 };
 </script>
 
