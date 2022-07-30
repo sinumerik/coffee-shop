@@ -9,7 +9,7 @@
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <h1 class="title-big">Everything You Love About Coffee</h1>
+            <title-component text="Everything You Love About Coffee"></title-component>
             <img
               class="beanslogo"
               src="@/assets/logo/Beans_logo.svg"
@@ -59,9 +59,24 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
+              <card-component
+                className="best__item"
+                :img="bestsellers[0].img"
+                :name="bestsellers[0].name"
+                :price="bestsellers[0].price"
+              ></card-component>
+              <card-component
+                className="best__item"
+                :img="bestsellers[1].img"
+                :name="bestsellers[1].name"
+                :price="bestsellers[1].price"
+              ></card-component>
+              <card-component
+                className="best__item"
+                :img="bestsellers[2].img"
+                :name="bestsellers[2].name"
+                :price="bestsellers[2].price"
+              ></card-component>
             </div>
           </div>
         </div>
@@ -72,36 +87,38 @@
 
 <script>
 import NavbarComponent from "@/components/NavbarComponent.vue";
-import CardComponent from '@/components/CardComponent.vue';
+import CardComponent from "@/components/CardComponent.vue";
+import TitleComponent from "@/components/TitleComponent.vue";
 
 export default {
   components: {
     NavbarComponent,
     CardComponent,
+    TitleComponent
   },
   data() {
     return {
-      cards: [
+      bestsellers: [
         {
           id: 0,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
           id: 1,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
           id: 2,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
-      ]
-    }
-  }
+      ],
+    };
+  },
 };
 </script>
