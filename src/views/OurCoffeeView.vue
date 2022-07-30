@@ -98,31 +98,31 @@ export default {
           price: 10.73
         },
         {
-          id: 0,
+          id: 1,
           img: 'coffee-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73
         },
         {
-          id: 0,
+          id: 2,
           img: 'coffee-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73
         },
         {
-          id: 0,
+          id: 3,
           img: 'coffee-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73
         },
         {
-          id: 0,
+          id: 4,
           img: 'coffee-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73
         },
         {
-          id: 0,
+          id: 5,
           img: 'coffee-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73
