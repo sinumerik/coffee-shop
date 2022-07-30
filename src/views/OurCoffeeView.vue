@@ -7,7 +7,7 @@
             <navbar-component></navbar-component>
           </div>
         </div>
-        <h1 class="title-big">Our Coffee</h1>
+        <title-component text="Our Coffee"></title-component>
       </div>
     </div>
     <section class="shop">
@@ -65,12 +65,42 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
+              <card-component
+                className="shop__item"
+                :img="coffee[0].img"
+                :name="coffee[0].name"
+                :price="coffee[0].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="coffee[1].img"
+                :name="coffee[1].name"
+                :price="coffee[1].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="coffee[2].img"
+                :name="coffee[2].name"
+                :price="coffee[2].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="coffee[3].img"
+                :name="coffee[3].name"
+                :price="coffee[3].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="coffee[4].img"
+                :name="coffee[4].name"
+                :price="coffee[4].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="coffee[5].img"
+                :name="coffee[5].name"
+                :price="coffee[5].price"
+              ></card-component>
             </div>
           </div>
         </div>
@@ -82,15 +112,17 @@
 <script>
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import CardComponent from '@/components/CardComponent.vue';
+import TitleComponent from "@/components/TitleComponent.vue";
 
 export default {
   components: {
     NavbarComponent,
     CardComponent,
+    TitleComponent
   },
   data() {
     return {
-      cards: [
+      coffee: [
         {
           id: 0,
           img: 'coffee-1.jpg',

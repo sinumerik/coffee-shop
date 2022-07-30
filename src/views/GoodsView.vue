@@ -7,7 +7,7 @@
             <navbar-component></navbar-component>
           </div>
         </div>
-        <h1 class="title-big">For your pleasure</h1>
+        <title-component text="For your pleasure"></title-component>
       </div>
     </div>
     <section class="shop">
@@ -44,12 +44,42 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
-              <card-component></card-component>
+              <card-component
+                className="shop__item"
+                :img="goods[0].img"
+                :name="goods[0].name"
+                :price="goods[0].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="goods[1].img"
+                :name="goods[1].name"
+                :price="goods[1].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="goods[2].img"
+                :name="goods[2].name"
+                :price="goods[2].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="goods[3].img"
+                :name="goods[3].name"
+                :price="goods[3].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="goods[4].img"
+                :name="goods[4].name"
+                :price="goods[4].price"
+              ></card-component>
+              <card-component
+                className="shop__item"
+                :img="goods[5].img"
+                :name="goods[5].name"
+                :price="goods[5].price"
+              ></card-component>
             </div>
           </div>
         </div>
@@ -61,15 +91,17 @@
 <script>
 import NavbarComponent from "@/components/NavbarComponent.vue";
 import CardComponent from '@/components/CardComponent.vue';
+import TitleComponent from "@/components/TitleComponent.vue";
 
 export default {
   components: {
     NavbarComponent,
     CardComponent,
+    TitleComponent
   },
   data() {
     return {
-      cards: [
+      goods: [
         {
           id: 0,
           img: 'coffee-1.jpg',
