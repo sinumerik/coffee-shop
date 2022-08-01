@@ -9,7 +9,9 @@
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <title-component text="Everything You Love About Coffee"></title-component>
+            <title-component
+              text="Everything You Love About Coffee"
+            ></title-component>
             <img
               class="beanslogo"
               src="@/assets/logo/Beans_logo.svg"
@@ -19,7 +21,13 @@
               We makes every day full of energy and taste
             </div>
             <div class="preview__subtitle">Want to try our beans?</div>
-            <a href="./coffeepage.html" class="preview__btn">More</a>
+            <a
+              @click.prevent="scrollToBestsellers"
+              href="./coffeepage.html"
+              class="preview__btn"
+            >
+              More
+            </a>
           </div>
         </div>
       </div>
@@ -53,7 +61,7 @@
         </div>
       </div>
     </section>
-    <section class="best">
+    <section class="best" ref="bestsellers">
       <div class="container">
         <div class="title">Our best</div>
         <div class="row">
@@ -80,13 +88,15 @@ import NavbarComponent from "@/components/NavbarComponent.vue";
 import CardComponent from "@/components/CardComponent.vue";
 import TitleComponent from "@/components/TitleComponent.vue";
 
+import { scrollIntoView } from "seamless-scroll-polyfill";
+
 import { v4 as uuidv4 } from "uuid";
 
 export default {
   components: {
     NavbarComponent,
     CardComponent,
-    TitleComponent
+    TitleComponent,
   },
   data() {
     return {
@@ -111,6 +121,14 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    scrollToBestsellers() {
+      scrollIntoView(this.$refs.bestsellers, {
+        behavior: "smooth",
+        block: "start",
+      });
+    },
   },
 };
 </script>
