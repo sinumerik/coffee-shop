@@ -60,22 +60,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
               <card-component
+                v-for="bestseller in bestsellers"
+                :key="bestseller.id"
                 className="best__item"
-                :img="bestsellers[0].img"
-                :name="bestsellers[0].name"
-                :price="bestsellers[0].price"
-              ></card-component>
-              <card-component
-                className="best__item"
-                :img="bestsellers[1].img"
-                :name="bestsellers[1].name"
-                :price="bestsellers[1].price"
-              ></card-component>
-              <card-component
-                className="best__item"
-                :img="bestsellers[2].img"
-                :name="bestsellers[2].name"
-                :price="bestsellers[2].price"
+                :img="bestseller.img"
+                :name="bestseller.name"
+                :price="bestseller.price"
               ></card-component>
             </div>
           </div>
@@ -90,6 +80,8 @@ import NavbarComponent from "@/components/NavbarComponent.vue";
 import CardComponent from "@/components/CardComponent.vue";
 import TitleComponent from "@/components/TitleComponent.vue";
 
+import { v4 as uuidv4 } from "uuid";
+
 export default {
   components: {
     NavbarComponent,
@@ -100,19 +92,19 @@ export default {
     return {
       bestsellers: [
         {
-          id: 0,
+          id: uuidv4(),
           img: "coffee-1.jpg",
           name: "Solimo Coffee Beans 2kg",
           price: 10.73,
         },
         {
-          id: 1,
+          id: uuidv4(),
           img: "coffee-1.jpg",
           name: "Solimo Coffee Beans 2kg",
           price: 10.73,
         },
         {
-          id: 2,
+          id: uuidv4(),
           img: "coffee-1.jpg",
           name: "Solimo Coffee Beans 2kg",
           price: 10.73,

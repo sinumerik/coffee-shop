@@ -1,6 +1,9 @@
 <template>
   <li :class="className">
-    <router-link :to="link"> {{ text }} </router-link>
+    <router-link :to="link">
+        <slot></slot>
+        {{ text }} 
+    </router-link>
   </li>
 </template>
 
