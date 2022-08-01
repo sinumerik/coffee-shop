@@ -4,28 +4,22 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
-            <li class="footer__item">
-              <router-link to="/">
-                <img
-                  :src="require(`@/assets/logo/${links[0].img}`)"
-                  :alt="links[0].img"
-                />
-              </router-link>
-            </li>
             <navbar-link-component
               className="footer__item"
-              :link="links[1].link"
-              :text="links[1].text"
-            ></navbar-link-component>
+              :link="links.header.link"
+            >
+              <img
+                :src="require(`@/assets/logo/${links.header.img}`)"
+                :alt="links.header.img"
+              />
+            </navbar-link-component>
+
             <navbar-link-component
+              v-for="link in links.other"
+              :key="link.id"
               className="footer__item"
-              :link="links[2].link"
-              :text="links[2].text"
-            ></navbar-link-component>
-            <navbar-link-component
-              className="footer__item"
-              :link="links[3].link"
-              :text="links[3].text"
+              :link="link.link"
+              :text="link.text"
             ></navbar-link-component>
           </ul>
         </div>
@@ -40,36 +34,40 @@
 </template>
 
 <script>
-import NavbarLinkComponent from '@/components/NavbarLinkComponent.vue';
+import NavbarLinkComponent from "@/components/NavbarLinkComponent.vue";
+
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   components: {
-    NavbarLinkComponent
+    NavbarLinkComponent,
   },
   data() {
     return {
-      links: [
-        {
-          id: 0,
+      links: {
+        header: {
+          id: uuidv4(),
           link: "/",
           img: "Logo_black.svg",
         },
-        {
-          id: 1,
-          link: "/our-coffee",
-          text: "Our coffee",
-        },
-        {
-          id: 2,
-          link: "goods",
-          text: "For your pleasure",
-        },
-        {
-          id: 3,
-          link: "/contacts",
-          text: "Contact us",
-        },
-      ],
+        other: [
+          {
+            id: uuidv4(),
+            link: "/our-coffee",
+            text: "Our coffee",
+          },
+          {
+            id: uuidv4(),
+            link: "goods",
+            text: "For your pleasure",
+          },
+          {
+            id: uuidv4(),
+            link: "/contacts",
+            text: "Contact us",
+          },
+        ],
+      },
     };
   },
 };

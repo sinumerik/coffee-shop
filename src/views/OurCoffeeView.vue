@@ -14,7 +14,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 offset-2">
-            <img class="shop__girl" src="@/assets/img/coffee_girl.jpg" alt="girl" />
+            <img
+              class="shop__girl"
+              src="@/assets/img/coffee_girl.jpg"
+              alt="girl"
+            />
           </div>
           <div class="col-lg-4">
             <div class="title">About our beans</div>
@@ -66,40 +70,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <card-component
+                v-for="coffee in coffees"
+                :key="coffee.id"
                 className="shop__item"
-                :img="coffee[0].img"
-                :name="coffee[0].name"
-                :price="coffee[0].price"
-              ></card-component>
-              <card-component
-                className="shop__item"
-                :img="coffee[1].img"
-                :name="coffee[1].name"
-                :price="coffee[1].price"
-              ></card-component>
-              <card-component
-                className="shop__item"
-                :img="coffee[2].img"
-                :name="coffee[2].name"
-                :price="coffee[2].price"
-              ></card-component>
-              <card-component
-                className="shop__item"
-                :img="coffee[3].img"
-                :name="coffee[3].name"
-                :price="coffee[3].price"
-              ></card-component>
-              <card-component
-                className="shop__item"
-                :img="coffee[4].img"
-                :name="coffee[4].name"
-                :price="coffee[4].price"
-              ></card-component>
-              <card-component
-                className="shop__item"
-                :img="coffee[5].img"
-                :name="coffee[5].name"
-                :price="coffee[5].price"
+                :img="coffee.img"
+                :name="coffee.name"
+                :price="coffee.price"
               ></card-component>
             </div>
           </div>
@@ -111,56 +87,58 @@
 
 <script>
 import NavbarComponent from "@/components/NavbarComponent.vue";
-import CardComponent from '@/components/CardComponent.vue';
+import CardComponent from "@/components/CardComponent.vue";
 import TitleComponent from "@/components/TitleComponent.vue";
+
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   components: {
     NavbarComponent,
     CardComponent,
-    TitleComponent
+    TitleComponent,
   },
   data() {
     return {
-      coffee: [
+      coffees: [
         {
-          id: 0,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          id: uuidv4(),
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
-          id: 1,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          id: uuidv4(),
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
-          id: 2,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          id: uuidv4(),
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
-          id: 3,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          id: uuidv4(),
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
-          id: 4,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          id: uuidv4(),
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
         {
-          id: 5,
-          img: 'coffee-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73
+          id: uuidv4(),
+          img: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: 10.73,
         },
-      ]
-    }
-  }
+      ],
+    };
+  },
 };
 </script>
