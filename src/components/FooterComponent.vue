@@ -6,11 +6,11 @@
           <ul class="footer d-flex flex-wrap">
             <navbar-link-component
               className="footer__item"
-              :link="links.header.link"
+              :link="links.footer.link"
             >
               <img
-                :src="require(`@/assets/logo/${links.header.img}`)"
-                :alt="links.header.img"
+                :src="require(`@/assets/logo/${links.footer.img}`)"
+                :alt="links.footer.img"
               />
             </navbar-link-component>
 
@@ -36,39 +36,14 @@
 <script>
 import NavbarLinkComponent from "@/components/NavbarLinkComponent.vue";
 
-import { v4 as uuidv4 } from "uuid";
-
 export default {
   components: {
     NavbarLinkComponent,
   },
-  data() {
-    return {
-      links: {
-        header: {
-          id: uuidv4(),
-          link: "/",
-          img: "Logo_black.svg",
-        },
-        other: [
-          {
-            id: uuidv4(),
-            link: "/our-coffee",
-            text: "Our coffee",
-          },
-          {
-            id: uuidv4(),
-            link: "goods",
-            text: "For your pleasure",
-          },
-          {
-            id: uuidv4(),
-            link: "/contacts",
-            text: "Contact us",
-          },
-        ],
-      },
-    };
+  computed: {
+    links() {
+      return this.$store.getters["getFooterLinks"];
+    },
   },
 };
 </script>

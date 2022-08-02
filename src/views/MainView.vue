@@ -90,37 +90,16 @@ import TitleComponent from "@/components/TitleComponent.vue";
 
 import { scrollIntoView } from "seamless-scroll-polyfill";
 
-import { v4 as uuidv4 } from "uuid";
-
 export default {
   components: {
     NavbarComponent,
     CardComponent,
     TitleComponent,
   },
-  data() {
-    return {
-      bestsellers: [
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-      ],
-    };
+  computed: {
+    bestsellers() {
+      return this.$store.getters["getBestsellers"];
+    }
   },
   methods: {
     scrollToBestsellers() {
