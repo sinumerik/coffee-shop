@@ -69,55 +69,16 @@ import NavbarComponent from "@/components/NavbarComponent.vue";
 import CardComponent from "@/components/CardComponent.vue";
 import TitleComponent from "@/components/TitleComponent.vue";
 
-import { v4 as uuidv4 } from "uuid";
-
 export default {
   components: {
     NavbarComponent,
     CardComponent,
     TitleComponent,
   },
-  data() {
-    return {
-      goods: [
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-        {
-          id: uuidv4(),
-          img: "coffee-1.jpg",
-          name: "Solimo Coffee Beans 2kg",
-          price: 10.73,
-        },
-      ],
-    };
+  computed: {
+    goods() {
+      return this.$store.getters["getGoods"];
+    },
   },
 };
 </script>

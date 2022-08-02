@@ -24,39 +24,14 @@
 <script>
 import NavbarLinkComponent from "@/components/NavbarLinkComponent.vue";
 
-import { v4 as uuidv4 } from "uuid";
-
 export default {
   components: {
     NavbarLinkComponent,
   },
-  data() {
-    return {
-      links: {
-        header: {
-          id: uuidv4(),
-          link: "/",
-          img: "Logo.svg",
-        },
-        other: [
-          {
-            id: uuidv4(),
-            link: "/our-coffee",
-            text: "Our coffee",
-          },
-          {
-            id: uuidv4(),
-            link: "goods",
-            text: "For your pleasure",
-          },
-          {
-            id: uuidv4(),
-            link: "/contacts",
-            text: "Contact us",
-          },
-        ],
-      },
-    };
-  },
+  computed: {
+    links() {
+      return this.$store.getters["getHeaderLinks"];
+    }
+  }
 };
 </script>
