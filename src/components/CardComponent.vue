@@ -1,8 +1,8 @@
 <template>
-  <div :class="className">
-    <img :src="require(`@/assets/img/${img}`)" :alt="img" />
-    <div class="best__item-title">{{ name }}</div>
-    <div class="best__item-price">{{ price }}$</div>
+  <div :class="className" @click="onEmit(card)">
+    <img :src="require(`@/assets/img/${card.img}`)" :alt="card.img" />
+    <div class="best__item-title">{{ card.name }}</div>
+    <div class="best__item-price">{{ card.price }}$</div>
   </div>
 </template>
 
@@ -13,18 +13,15 @@ export default {
       type: String,
       required: false
     },
-    img: {
-      type: String,
+    card: {
+      type: Object,
       required: true
-    },
-    name: {
-      type: String,
-      required: true
-    },
-    price: {
-      type: Number,
-      required: true
-    },
+    }
+  },
+  methods: {
+    onEmit(card) {
+      this.$emit('onNavigate', card);
+    }
   }
 };
 </script>

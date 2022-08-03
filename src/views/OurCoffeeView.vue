@@ -70,12 +70,11 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <card-component
-                v-for="coffee in coffee"
-                :key="coffee.id"
+                v-for="card in coffee"
+                :key="card.id"
                 className="shop__item"
-                :img="coffee.img"
-                :name="coffee.name"
-                :price="coffee.price"
+                :card="card"
+                @onNavigate="navigate"
               ></card-component>
             </div>
           </div>
@@ -96,10 +95,25 @@ export default {
     CardComponent,
     TitleComponent,
   },
+  data() {
+    return {
+      name: 'coffee'
+    }
+  },
   computed: {
     coffee() {
-      return this.$store.getters["getCoffee"];
-    }
+      return this.$store.getters["getProducts"](this.name);
+    },
+  },
+  methods: {
+    navigate(card) {
+      this.$router.push({
+        name: this.name,
+        params: {
+          id: card.id,
+        },
+      });
+    },
   },
 };
 </script>
