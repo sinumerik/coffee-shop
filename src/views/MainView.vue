@@ -68,12 +68,10 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
               <card-component
-                v-for="bestseller in bestsellers"
-                :key="bestseller.id"
+                v-for="card in bestsellers"
+                :key="card.id"
                 className="best__item"
-                :img="bestseller.img"
-                :name="bestseller.name"
-                :price="bestseller.price"
+                :card="card"
               ></card-component>
             </div>
           </div>
@@ -96,9 +94,14 @@ export default {
     CardComponent,
     TitleComponent,
   },
+  data() {
+    return {
+      productName: 'bestsellers'
+    }
+  },
   computed: {
     bestsellers() {
-      return this.$store.getters["getBestsellers"];
+      return this.$store.getters["getProducts"](this.productName);
     }
   },
   methods: {
