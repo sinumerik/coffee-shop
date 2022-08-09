@@ -1,8 +1,8 @@
 <template>
   <div :class="className" @click="onEmit(card)">
-    <img :src="require(`@/assets/img/${card.img}`)" :alt="card.img" />
+    <img :src="card.url" :alt="card.img" />
     <div class="best__item-title">{{ card.name }}</div>
-    <div class="best__item-price">{{ card.price }}$</div>
+    <div class="best__item-price">{{ card.price }}</div>
   </div>
 </template>
 
