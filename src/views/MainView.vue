@@ -96,13 +96,13 @@ export default {
   },
   data() {
     return {
-      productName: 'bestsellers'
-    }
+      name: "bestsellers",
+    };
   },
   computed: {
     bestsellers() {
-      return this.$store.getters["getProducts"](this.productName);
-    }
+      return this.$store.getters["getProducts"](this.name);
+    },
   },
   methods: {
     scrollToBestsellers() {
@@ -111,6 +111,13 @@ export default {
         block: "start",
       });
     },
+  },
+  beforeMount() {
+    fetch(`http://localhost:3000/${this.name}`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.$store.dispatch('setBestsellers', data)
+      });
   },
 };
 </script>

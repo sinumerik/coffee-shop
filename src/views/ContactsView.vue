@@ -185,6 +185,8 @@ export default {
     async submitForm() {
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) return;
+
+      this.$router.push('/thank-you');
     },
   },
 };

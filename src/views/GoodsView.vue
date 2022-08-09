@@ -84,6 +84,13 @@ export default {
       return this.$store.getters["getProducts"](this.name);
     },
   },
+  beforeMount() {
+    fetch(`http://localhost:3000/${this.name}`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.$store.dispatch('setGoods', data)
+      });
+  },
   methods: {
     navigate(card) {
       this.$router.push({
